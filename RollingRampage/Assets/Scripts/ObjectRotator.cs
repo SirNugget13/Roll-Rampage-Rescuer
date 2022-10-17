@@ -17,27 +17,12 @@ public class ObjectRotator : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
-                if (targetObject)
+                targetObject.GetComponent<Rigidbody2D>().angularVelocity = 0;
+                if (targetObject != null)
                 {
                     //targetObject.GetComponent<Rigidbody2D>().freezeRotation = true;
                     selectedObject = targetObject.transform.gameObject;
                     offset = selectedObject.transform.position - mousePosition;
-
-                    if (Input.GetKey("A"))
-                    {
-                        Debug.Log("Yo");
-                        //targetObject.GetComponent<Rigidbody2D>().freezeRotation = false;
-                        selectedObject.transform.Rotate(0, 0, selectedObject.transform.rotation.z - RotationMultiplier);
-                        //targetObject.GetComponent<Rigidbody2D>().freezeRotation = true;
-                    }
-
-                    if (Input.GetKeyDown(KeyCode.D))
-                    {
-                        //targetObject.GetComponent<Rigidbody2D>().freezeRotation = false;
-                        selectedObject.transform.Rotate(0, 0, selectedObject.transform.rotation.z + RotationMultiplier);
-                        //targetObject.GetComponent<Rigidbody2D>().freezeRotation = true;
-                    }
-
                 }
             }
             if (selectedObject)
@@ -47,9 +32,26 @@ public class ObjectRotator : MonoBehaviour
             if (Input.GetMouseButtonUp(0) && selectedObject)
             {
                 selectedObject.GetComponent<Rigidbody2D>().freezeRotation = false;
+                selectedObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 selectedObject = null;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Debug.Log("Yo");
+            //targetObject.GetComponent<Rigidbody2D>().freezeRotation = false;
+            selectedObject.transform.Rotate(0, 0, selectedObject.transform.rotation.z - RotationMultiplier);
+            //targetObject.GetComponent<Rigidbody2D>().freezeRotation = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            //targetObject.GetComponent<Rigidbody2D>().freezeRotation = false;
+            selectedObject.transform.Rotate(0, 0, selectedObject.transform.rotation.z + RotationMultiplier);
+            //targetObject.GetComponent<Rigidbody2D>().freezeRotation = true;
+        }
+
     }
 }
 

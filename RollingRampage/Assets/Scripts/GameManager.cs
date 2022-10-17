@@ -175,6 +175,7 @@ public class GameManager : MonoBehaviour
             HighlightBoxes[0].SetActive(false);
             HighlightBoxes[2].SetActive(false);
             HighlightBoxes[3].SetActive(false);
+            HighlightBoxes[4].SetActive(false);
         }
 
         if (Index == 2)

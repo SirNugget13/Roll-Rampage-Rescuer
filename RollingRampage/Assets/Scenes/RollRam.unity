@@ -1244,7 +1244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedObject: {fileID: 0}
-  RotationMultiplier: 5
+  RotationMultiplier: 20
   RotateObject: 0
 --- !u!1001 &586162553
 PrefabInstance:
@@ -5169,15 +5169,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6022844054033278289, guid: 73a982e298b38fc4db4cc0cea0a02614, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6022844054033278289, guid: 73a982e298b38fc4db4cc0cea0a02614, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6022844054033278289, guid: 73a982e298b38fc4db4cc0cea0a02614, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6022844054033278289, guid: 73a982e298b38fc4db4cc0cea0a02614, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

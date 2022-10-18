@@ -444,7 +444,6 @@ Transform:
   m_Children:
   - {fileID: 2143528046}
   - {fileID: 1601891494}
-  - {fileID: 193984088}
   m_Father: {fileID: 1031499374}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -472,15 +471,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193984087}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 482.55542, y: 277.8021, z: -6.424796}
-  m_LocalScale: {x: 1.7391305, y: 1.7391305, z: 1.7391305}
+  m_LocalPosition: {x: 563.037, y: 304.53476, z: -4.2831974}
+  m_LocalScale: {x: 1.1594203, y: 1.1594203, z: 1.1594203}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1779976658}
   - {fileID: 266848995}
   - {fileID: 1611486651}
-  m_Father: {fileID: 183119162}
-  m_RootOrder: 2
+  m_Father: {fileID: 2143528046}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &264672027
 GameObject:
@@ -4724,26 +4723,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2143528046
-Transform:
+--- !u!224 &2143528046
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143528045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -362, y: -179, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1497093440}
   - {fileID: 547468775}
   - {fileID: 1267522228}
   - {fileID: 2027415894}
   - {fileID: 890092750}
+  - {fileID: 193984088}
   m_Father: {fileID: 183119162}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -394, y: -223}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.49999985, y: 0.49999997}
 --- !u!1001 &611068726245387464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4941,6 +4946,10 @@ PrefabInstance:
       propertyPath: FinalCamPos
       value: 
       objectReference: {fileID: 899100984}
+    - target: {fileID: 727080202394251007, guid: c2454971b9ddd4244addc9b05482e544, type: 3}
+      propertyPath: HotBarGroup
+      value: 
+      objectReference: {fileID: 2143528045}
     - target: {fileID: 727080202394251007, guid: c2454971b9ddd4244addc9b05482e544, type: 3}
       propertyPath: BrickNumText
       value: 

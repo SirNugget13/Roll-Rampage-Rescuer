@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
@@ -30,9 +31,14 @@ public class GameManager : MonoBehaviour
     public GameObject MainMenuButton;
     public GameObject PlaceSpaceObj;
 
+    public GameObject TutorialBox;
+    public Text TutorialBoxText;
+    private bool[] ToolTipTracker = { true, true, true, true, true, true };
+
     public GameObject[] HighlightBoxes;
     public Transform HotBarOffScreen;
     public GameObject Hotbar;
+    public GameObject HotBarGroup;
 
     //Placing Object Variables
     public ObjectPlacer ObjectPlacer;
@@ -54,6 +60,25 @@ public class GameManager : MonoBehaviour
         UpdateObjectNumbers();
 
         ObjectList = ObjectPlacer.ObjectsToPlace;
+
+        if(SceneManager.GetSceneByBuildIndex(1) == SceneManager.GetActiveScene())
+        {
+            for(int i = 0; i < ToolTipTracker.Length; i++)
+            {
+                ToolTipTracker[i] = true;
+            }
+        }
+
+        this.Wait(2f, () =>
+        {
+            if (ToolTipTracker[0])
+            {
+                ChangeTutorialBoxText("Protect The Guy from the boulder!\n" +
+                    "Place walls and objects using the inventory and tools\n" +
+                    "Press the PLAY button to start the boulder rolling", 8f);
+                ToolTipTracker[0] = false;
+            }
+        });
     }
 
     // Update is called once per frame
@@ -106,6 +131,12 @@ public class GameManager : MonoBehaviour
 
     public void SpringButton()
     {
+        if(ToolTipTracker[1])
+        {
+            ChangeTutorialBoxText("The Spring is used to bounce any object except The Guy", 4f);
+            ToolTipTracker[1] = false;
+        }
+        
         PlaceSpaceObj.SetActive(true);
         HighlightBoxer(0);
         ObjectPlacer.SelectedObject = ObjectList[2];
@@ -114,6 +145,12 @@ public class GameManager : MonoBehaviour
 
     public void BrickButton()
     {
+        if (ToolTipTracker[2])
+        {
+            ChangeTutorialBoxText("The Brick Wall is a weak wall that will somewhat slow down the boulder", 4f);
+            ToolTipTracker[2] = false;
+        }
+
         PlaceSpaceObj.SetActive(true);
         HighlightBoxer(1);
         ObjectPlacer.SelectedObject = ObjectList[0];
@@ -122,6 +159,12 @@ public class GameManager : MonoBehaviour
 
     public void MetalButton()
     {
+        if (ToolTipTracker[3])
+        {
+            ChangeTutorialBoxText("The Metal Wall is a stronger wall that will considerably slow down the boulder", 4f);
+            ToolTipTracker[3] = false;
+        }
+
         PlaceSpaceObj.SetActive(true);
         HighlightBoxer(2);
         ObjectPlacer.SelectedObject = ObjectList[1];
@@ -132,12 +175,21 @@ public class GameManager : MonoBehaviour
     {
         start = true;
         ObjectPlacer.GameStarted = true;
-        LeanTween.move(Hotbar, HotBarOffScreen, 2f);
+
+        HotBarGroup.GetComponent<RectTransform>().LeanMove(new Vector3(400, -223, 0), 2f).setEaseInExpo();
+
+        //LeanTween.move(Hotbar, HotBarOffScreen, 2f);
         ObjectRotator.RotateObject = false;
     }
 
     public void EraserButton()
     {
+        if (ToolTipTracker[4])
+        {
+            ChangeTutorialBoxText("Click on objects to add them back into your inventory", 4f);
+            ToolTipTracker[4] = false;
+        }
+
         PlaceSpaceObj.SetActive(true);
         HighlightBoxer(3);
         ObjectPlacer.SelectedObject = ObjectList[3];
@@ -152,6 +204,12 @@ public class GameManager : MonoBehaviour
 
     public void RotationUser()
     {
+        if (ToolTipTracker[5])
+        {
+            ChangeTutorialBoxText("Pick up an already placed object\nRotate with the A and D keys", 4f);
+            ToolTipTracker[5] = false;
+        }
+
         PlaceSpaceObj.SetActive(false);
         HighlightBoxer(4);
         ObjectRotator.RotateObject = true;
@@ -204,6 +262,20 @@ public class GameManager : MonoBehaviour
             HighlightBoxes[2].SetActive(false);
             HighlightBoxes[3].SetActive(false);
         }
+    }
+
+    void ChangeTutorialBoxText(string NewText, float TimeOnScreen)
+    {
+        RectTransform RT = TutorialBox.GetComponent<RectTransform>();
+        
+        TutorialBoxText.text = NewText;
+
+        LeanTween.moveLocal(TutorialBox, new Vector3(-370f, 250f, 0), 3).setEaseInOutExpo();
+
+        this.Wait(TimeOnScreen, () =>
+        {
+            LeanTween.moveLocal(TutorialBox, new Vector3(-370f, 700f, 0), 3).setEaseInOutExpo();
+        });
     }
 
     void UpdateObjectNumbers()

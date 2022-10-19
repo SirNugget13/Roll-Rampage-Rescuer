@@ -34,11 +34,15 @@ public class GameManager : MonoBehaviour
     public GameObject TutorialBox;
     public Text TutorialBoxText;
     private bool[] ToolTipTracker = { true, true, true, true, true, true };
+    public bool FirstLevel;
 
     public GameObject[] HighlightBoxes;
     public Transform HotBarOffScreen;
     public GameObject Hotbar;
     public GameObject HotBarGroup;
+
+    public GameObject Timer;
+    public Text TimerText;
 
     //Placing Object Variables
     public ObjectPlacer ObjectPlacer;
@@ -48,10 +52,14 @@ public class GameManager : MonoBehaviour
     //Player
     public Man Man;
     private bool GameOver = false;
+    public float GameWinTimer;
+    private float UITimer;
 
     // Start is called before the first frame update
     void Start()
     {
+        float UITimer = GameWinTimer;
+
         CamPos.CamFinalSize = FinalCamSize;
         CamPos.EndPoint = FinalCamPos;
 
@@ -61,11 +69,11 @@ public class GameManager : MonoBehaviour
 
         ObjectList = ObjectPlacer.ObjectsToPlace;
 
-        if(SceneManager.GetSceneByBuildIndex(1) == SceneManager.GetActiveScene())
+        if(!FirstLevel)
         {
             for(int i = 0; i < ToolTipTracker.Length; i++)
             {
-                ToolTipTracker[i] = true;
+                ToolTipTracker[i] = false;
             }
         }
 
@@ -91,6 +99,8 @@ public class GameManager : MonoBehaviour
                 SpawnBoulder();
                 BoulderIsSpawned = true;
             }
+
+            DecreaseTimer();
         }
 
         if(GameWinScreenUse)
@@ -109,7 +119,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGameWin()
     {
-        this.Wait(20f, () =>
+        this.Wait(GameWinTimer, () =>
         {
             if(!GameOver)
             {
@@ -276,6 +286,20 @@ public class GameManager : MonoBehaviour
         {
             LeanTween.moveLocal(TutorialBox, new Vector3(-370f, 700f, 0), 3).setEaseInOutExpo();
         });
+    }
+
+    void DecreaseTimer()
+    {
+        if(UITimer > 0)
+        {
+            UITimer -= Time.deltaTime;
+        }
+        else
+        {
+            UITimer = 0;
+        }
+
+        TimerText.text = UITimer.ToString();
     }
 
     void UpdateObjectNumbers()

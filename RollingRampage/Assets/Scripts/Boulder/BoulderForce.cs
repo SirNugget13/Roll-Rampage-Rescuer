@@ -23,7 +23,7 @@ public class BoulderForce : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(RB.velocity.x >= BreakingSpeed && collision.gameObject.GetComponent<BreakingBoom>() != null)
+        if(TotalVelo >= BreakingSpeed && collision.gameObject.GetComponent<BreakingBoom>() != null)
         {
             GameObject Hit = collision.gameObject;
             

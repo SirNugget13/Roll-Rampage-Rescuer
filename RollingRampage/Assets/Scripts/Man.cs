@@ -26,12 +26,9 @@ public class Man : MonoBehaviour
         {
             BoulderForce Boulder = collision.gameObject.GetComponent<BoulderForce>();
 
-            Debug.Log(Boulder.TotalVelo);
-
             if (Boulder.TotalVelo > KillVelo)
             {
                 StartCoroutine("KillDelay");
-                Debug.Log("Yuppy");
                 IsDead = true;
                 gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 gameObject.GetComponent<Rigidbody2D>().rotation = 0;

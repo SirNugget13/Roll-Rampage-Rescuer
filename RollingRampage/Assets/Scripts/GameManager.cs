@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject Timer;
     public Text TimerText;
+    private bool StartTheTimer = false;
+    private float UITimerValue;
 
     //Placing Object Variables
     public ObjectPlacer ObjectPlacer;
@@ -53,13 +55,12 @@ public class GameManager : MonoBehaviour
     public Man Man;
     private bool GameOver = false;
     public float GameWinTimer;
-    private float UITimer;
 
     // Start is called before the first frame update
     void Start()
     {
-        float UITimer = GameWinTimer;
-
+        UITimerValue = GameWinTimer; 
+        
         CamPos.CamFinalSize = FinalCamSize;
         CamPos.EndPoint = FinalCamPos;
 
@@ -100,7 +101,21 @@ public class GameManager : MonoBehaviour
                 BoulderIsSpawned = true;
             }
 
-            DecreaseTimer();
+            if (StartTheTimer && !GameOver)
+            {
+                
+                if (UITimerValue > 0)
+                {
+                    UITimerValue -= Time.deltaTime;
+                    updateTimer(UITimerValue);
+                }
+                else
+                {
+                    Debug.Log("Time is UP!");
+                    UITimerValue = 0;
+                    StartTheTimer = false;
+                }
+            }
         }
 
         if(GameWinScreenUse)
@@ -115,6 +130,13 @@ public class GameManager : MonoBehaviour
                 GameOver = true;
             }
         }
+    }
+
+    void updateTimer(float currentTime)
+    {
+        //currentTime += 1;
+
+        TimerText.text = currentTime.ToString();
     }
 
     public void StartGameWin()
@@ -185,9 +207,10 @@ public class GameManager : MonoBehaviour
     {
         start = true;
         ObjectPlacer.GameStarted = true;
+        StartTheTimer = true;
 
         HotBarGroup.GetComponent<RectTransform>().LeanMove(new Vector3(400, -223, 0), 2f).setEaseInExpo();
-
+        LeanTween.moveLocal(Timer, new Vector3(600f, 350f, 0), 3).setEaseInOutExpo();
         //LeanTween.move(Hotbar, HotBarOffScreen, 2f);
         ObjectRotator.RotateObject = false;
     }
@@ -286,20 +309,6 @@ public class GameManager : MonoBehaviour
         {
             LeanTween.moveLocal(TutorialBox, new Vector3(-370f, 700f, 0), 3).setEaseInOutExpo();
         });
-    }
-
-    void DecreaseTimer()
-    {
-        if(UITimer > 0)
-        {
-            UITimer -= Time.deltaTime;
-        }
-        else
-        {
-            UITimer = 0;
-        }
-
-        TimerText.text = UITimer.ToString();
     }
 
     void UpdateObjectNumbers()

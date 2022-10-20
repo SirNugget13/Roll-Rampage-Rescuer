@@ -35,6 +35,21 @@ public class SceneLoader : MonoBehaviour
         });
     }
 
+    public void ReloadScene()
+    {
+        fader.gameObject.SetActive(true);
+
+        LeanTween.scale(fader, new Vector3(0, 0, 0), 0);
+
+        this.Wait(1, () =>
+        {
+            LeanTween.scale(fader, Vector3.one, 0.5f).setEase(LeanTweenType.easeInBack).setOnComplete(() =>
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            });
+        });
+    }
+
     public void LoadScenes(string scene)
     {
         fader.gameObject.SetActive(true);

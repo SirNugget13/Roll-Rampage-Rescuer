@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CanvasGroup WinScreenGroup;
 
     //Boulder Variables
+    public GameObject FourthLevelBoulder;
     public Transform BoulderStartingPoint;
     public GameObject Boulder;
     private bool BoulderIsSpawned = false;
@@ -37,7 +38,6 @@ public class GameManager : MonoBehaviour
     public bool FirstLevel;
 
     public GameObject[] HighlightBoxes;
-    public Transform HotBarOffScreen;
     public GameObject Hotbar;
     public GameObject HotBarGroup;
 
@@ -68,6 +68,11 @@ public class GameManager : MonoBehaviour
 
         UpdateObjectNumbers();
 
+        if(FourthLevelBoulder != null)
+        {
+            FourthLevelBoulder.SetActive(false);
+        }
+
         ObjectList = ObjectPlacer.ObjectsToPlace;
 
         if(!FirstLevel)
@@ -82,7 +87,7 @@ public class GameManager : MonoBehaviour
         {
             if (ToolTipTracker[0])
             {
-                ChangeTutorialBoxText("Protect The Guy from the boulder!\n" +
+                ChangeTutorialBoxText("Protect The Guy from the boulder until the timer runs out!\n" +
                     "Place walls and objects using the inventory and tools\n" +
                     "Press the PLAY button to start the boulder rolling", 8f);
                 ToolTipTracker[0] = false;
@@ -99,6 +104,11 @@ public class GameManager : MonoBehaviour
             {
                 SpawnBoulder();
                 BoulderIsSpawned = true;
+
+                if(FourthLevelBoulder != null)
+                {
+                    FourthLevelBoulder.SetActive(true);
+                }
             }
 
             if (StartTheTimer && !GameOver)
@@ -210,8 +220,7 @@ public class GameManager : MonoBehaviour
         StartTheTimer = true;
 
         HotBarGroup.GetComponent<RectTransform>().LeanMove(new Vector3(400, -223, 0), 2f).setEaseInExpo();
-        LeanTween.moveLocal(Timer, new Vector3(600f, 350f, 0), 3).setEaseInOutExpo();
-        //LeanTween.move(Hotbar, HotBarOffScreen, 2f);
+        LeanTween.moveLocal(Timer, new Vector3(600f, 275f, 0), 3).setEaseInOutExpo();
         ObjectRotator.RotateObject = false;
     }
 

@@ -6113,5 +6113,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 611068725236659981, guid: 90b701bd96929824692a945c41058253, type: 3}
+      propertyPath: CamFinalSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 611068725236659981, guid: 90b701bd96929824692a945c41058253, type: 3}
+      propertyPath: MoveToBoulderSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 611068725236659981, guid: 90b701bd96929824692a945c41058253, type: 3}
+      propertyPath: MoveFromBoulderSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90b701bd96929824692a945c41058253, type: 3}

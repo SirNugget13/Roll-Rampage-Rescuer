@@ -10,6 +10,7 @@ public class Level5GameManager : MonoBehaviour
     public bool start = false;
 
     [SerializeField] private CanvasGroup WinScreenGroup;
+    [SerializeField] private CanvasGroup LoseScreenGroup;
 
     //Boulder Variables
     public GameObject FifthLevelBoulder;
@@ -60,14 +61,14 @@ public class Level5GameManager : MonoBehaviour
 
         HighlightBoxer(1);
 
-        UpdateObjectNumbers();
-
         if (FifthLevelBoulder != null)
         {
             FifthLevelBoulder.SetActive(false);
         }
 
         ObjectList = ObjectPlacer.ObjectsToPlace;
+
+        UpdateObjectNumbers();
     }
 
     // Update is called once per frame
@@ -96,11 +97,16 @@ public class Level5GameManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Time is UP!");
                     UITimerValue = 0;
                     StartTheTimer = false;
                 }
             }
+        }
+
+        if(GameOver)
+        {
+            LoseScreenGroup.gameObject.SetActive(true);
+            LoseScreenGroup.alpha = Mathf.Lerp(LoseScreenGroup.alpha, 1, 1 * Time.deltaTime);
         }
 
         if (GameWinScreenUse)
@@ -175,7 +181,7 @@ public class Level5GameManager : MonoBehaviour
         ObjectPlacer.GameStarted = true;
         StartTheTimer = true;
 
-        HotBarGroup.GetComponent<RectTransform>().LeanMove(new Vector3(400, -223, 0), 2f).setEaseInExpo();
+        HotBarGroup.GetComponent<RectTransform>().LeanMove(new Vector3(400, -223, 0), 2f).setEaseInOutExpo();
         LeanTween.moveLocal(Timer, new Vector3(600f, 275f, 0), 3).setEaseInOutExpo();
         ObjectRotator.RotateObject = false;
     }

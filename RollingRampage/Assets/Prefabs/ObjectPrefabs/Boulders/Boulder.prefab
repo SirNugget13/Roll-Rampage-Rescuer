@@ -138,5 +138,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BreakingSpeed: 15
   TotalVelo: 0
-  BrickSubtraction: 3
-  MetalSubtraction: 6
+  BrickSubtraction: 4
+  MetalSubtraction: 8

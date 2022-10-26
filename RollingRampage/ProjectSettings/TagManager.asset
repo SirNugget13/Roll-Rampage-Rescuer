@@ -10,6 +10,7 @@ TagManager:
   - BrickWall
   - MetalWall
   - Spring
+  - Man
   layers:
   - Default
   - TransparentFX

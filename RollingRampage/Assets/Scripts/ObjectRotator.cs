@@ -18,7 +18,7 @@ public class ObjectRotator : MonoBehaviour
             {
                 Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
                 
-                if (targetObject != null)
+                if (targetObject != null && targetObject.gameObject.tag != "Man")
                 {
                     targetObject.GetComponent<Rigidbody2D>().angularVelocity = 0;
                     targetObject.GetComponent<Rigidbody2D>().freezeRotation = true;

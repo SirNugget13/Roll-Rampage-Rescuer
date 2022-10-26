@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 7897684595925941646}
   - component: {fileID: 5561090850587974704}
   - component: {fileID: 1507825209960169748}
+  - component: {fileID: 4361425969381672602}
   - component: {fileID: 953983538834189938}
   - component: {fileID: 1418275228240256014}
   - component: {fileID: 324942058}
   m_Layer: 3
   m_Name: Man
-  m_TagString: Untagged
+  m_TagString: Man
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,6 +104,22 @@ CapsuleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.5, y: 5}
+  m_Direction: 0
+--- !u!70 &4361425969381672602
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044964874326551165}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.015859604, y: 0.039648533}
+  m_Size: {x: 2.4198341, y: 5.3647623}
   m_Direction: 0
 --- !u!50 &953983538834189938
 Rigidbody2D:

@@ -3,7 +3,9 @@ guid: 17dd68f4411492140ba970f3a1708cdc
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ExplodeSound: {fileID: 8300000, guid: dacc212317b65dc478339c4f5890984e, type: 3}
+  - DeathSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

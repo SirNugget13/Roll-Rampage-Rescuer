@@ -3268,7 +3268,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 410577977}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadScenes
         m_Mode: 3
@@ -6358,11 +6358,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5942976348713091400, guid: a746c5bee730b69408c55a36476a226b, type: 3}
       propertyPath: BrickNum
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5942976348713091400, guid: a746c5bee730b69408c55a36476a226b, type: 3}
       propertyPath: MetalNum
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5942976348713091400, guid: a746c5bee730b69408c55a36476a226b, type: 3}
       propertyPath: SpringNum

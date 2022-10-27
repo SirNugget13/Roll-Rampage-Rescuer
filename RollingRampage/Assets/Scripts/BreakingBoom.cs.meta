@@ -3,7 +3,11 @@ guid: b8bd9f18bd8d5314cb4095d80769ed1d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - AnimController: {instanceID: 0}
+  - Explode: {instanceID: 0}
+  - ExplodeSound: {fileID: 8300000, guid: dacc212317b65dc478339c4f5890984e, type: 3}
+  - ASource: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

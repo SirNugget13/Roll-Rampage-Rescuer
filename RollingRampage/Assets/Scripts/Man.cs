@@ -6,11 +6,15 @@ public class Man : MonoBehaviour
 {
     public bool IsDead = false;
     public float KillVelo = 20f;
+    public AudioClip ExplodeSound;
+    public AudioClip DeathSound;
     private Animator AnimController;
+    private AudioSource ASource;
 
     private void Start()
     {
         AnimController = gameObject.GetComponent<Animator>();
+        ASource = gameObject.GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -44,6 +48,8 @@ public class Man : MonoBehaviour
                 gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 gameObject.GetComponent<Rigidbody2D>().rotation = 0;
                 AnimController.Play("ManExplosion");
+                ASource.PlayOneShot(ExplodeSound);
+                ASource.PlayOneShot(DeathSound);
                 StartCoroutine("KillDelay");
             }
 
@@ -57,7 +63,7 @@ public class Man : MonoBehaviour
        
         IEnumerator KillDelay()
         {
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(3f);
             Destroy(gameObject);
         }
     

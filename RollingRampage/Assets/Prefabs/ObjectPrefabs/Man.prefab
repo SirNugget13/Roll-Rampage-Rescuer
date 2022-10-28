@@ -158,7 +158,8 @@ MonoBehaviour:
   IsDead: 0
   KillVelo: 0
   ExplodeSound: {fileID: 8300000, guid: c4942afa0b1ac804e85250d85fa3286e, type: 3}
-  DeathSound: {fileID: 0}
+  DeathSound: {fileID: 8300000, guid: 37316b0794ece76479e81a9265a5b3c1, type: 3}
+  ASource: {fileID: 647023145196971750}
 --- !u!95 &324942058
 Animator:
   serializedVersion: 4

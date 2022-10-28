@@ -40,6 +40,8 @@ public class BoulderForce : MonoBehaviour
             Physics2D.IgnoreCollision(collision.collider, GetComponent<CircleCollider2D>());
             Hit.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             Hit.GetComponent<Rigidbody2D>().freezeRotation = true;
+            
+
         }
 
         if(collision.gameObject.tag == "BrickWall")

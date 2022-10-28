@@ -9,12 +9,11 @@ public class Man : MonoBehaviour
     public AudioClip ExplodeSound;
     public AudioClip DeathSound;
     private Animator AnimController;
-    private AudioSource ASource;
+    public AudioSource ASource;
 
     private void Start()
     {
         AnimController = gameObject.GetComponent<Animator>();
-        ASource = gameObject.GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -32,6 +31,7 @@ public class Man : MonoBehaviour
 
             if (Boulder.TotalVelo > KillVelo)
             {
+                PlayDeathSounds();
                 StartCoroutine("KillDelay");
                 IsDead = true;
                 gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -44,12 +44,11 @@ public class Man : MonoBehaviour
         {
             if ((Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.y)) * rb.mass > 100.0f)
             {
+                PlayDeathSounds();
                 IsDead = true;
                 gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 gameObject.GetComponent<Rigidbody2D>().rotation = 0;
                 AnimController.Play("ManExplosion");
-                ASource.PlayOneShot(ExplodeSound);
-                ASource.PlayOneShot(DeathSound);
                 StartCoroutine("KillDelay");
             }
 
@@ -60,7 +59,18 @@ public class Man : MonoBehaviour
             Hit.GetComponent<Rigidbody2D>().freezeRotation = true;
         }
     }
-       
+        
+    public void PlayDeathSounds()
+    {
+        Debug.Log("Gabba");
+        if(!IsDead)
+        {
+            Debug.Log("Goo");
+            ASource.PlayOneShot(DeathSound);
+            ASource.PlayOneShot(ExplodeSound);
+        }
+    }
+
         IEnumerator KillDelay()
         {
             yield return new WaitForSeconds(3f);

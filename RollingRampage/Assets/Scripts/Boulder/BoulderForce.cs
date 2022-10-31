@@ -8,6 +8,8 @@ public class BoulderForce : MonoBehaviour
     public float BreakingSpeed;
     public float TotalVelo;
 
+    public AudioSource Rolling;
+
     public float BrickSubtraction;
     public float MetalSubtraction;
 
@@ -23,6 +25,12 @@ public class BoulderForce : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.tag == "WoodRamp" || collision.gameObject.tag == "StoneGround")
+        {
+            //Debug.Log("Is Playing");
+            Rolling.Play();
+        }
+        
         if(TotalVelo >= BreakingSpeed && collision.gameObject.GetComponent<BreakingBoom>() != null)
         {
             GameObject Hit = collision.gameObject;
@@ -40,8 +48,6 @@ public class BoulderForce : MonoBehaviour
             Physics2D.IgnoreCollision(collision.collider, GetComponent<CircleCollider2D>());
             Hit.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             Hit.GetComponent<Rigidbody2D>().freezeRotation = true;
-            
-
         }
 
         if(collision.gameObject.tag == "BrickWall")
@@ -59,6 +65,15 @@ public class BoulderForce : MonoBehaviour
            
         }
 
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "WoodRamp" || collision.gameObject.tag == "StoneGround")
+        {
+            //Debug.Log("Stop Playing");
+            Rolling.Stop();
+        }
     }
 
     void PhyisicsApplication(float SubtractionForce)

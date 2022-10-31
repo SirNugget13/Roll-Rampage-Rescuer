@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2362146108938758658}
   m_Layer: 0
   m_Name: Level2WoodRamp
-  m_TagString: Untagged
+  m_TagString: WoodRamp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -139,6 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BreakingSpeed: 15
   TotalVelo: 0
+  Rolling: {fileID: 2260643795649560949}
   BrickSubtraction: 4
   MetalSubtraction: 8
 --- !u!82 &2260643795649560949
@@ -155,7 +156,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

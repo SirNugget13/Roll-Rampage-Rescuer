@@ -11,6 +11,8 @@ TagManager:
   - MetalWall
   - Spring
   - Man
+  - WoodRamp
+  - StoneGround
   layers:
   - Default
   - TransparentFX

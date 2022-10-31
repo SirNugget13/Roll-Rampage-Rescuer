@@ -7,6 +7,13 @@ public class ObjectPlacer : MonoBehaviour
     public GameObject[] ObjectsToPlace;
     public GameObject SelectedObject;
 
+    public AudioClip SpringPlace;
+    public AudioClip BrickPlace;
+    public AudioClip MetalPlace;
+    public AudioClip EraserSound;
+
+    public AudioSource ASource;
+
     public bool GameStarted = false;
 
     public int BrickNum = 0;
@@ -29,18 +36,21 @@ public class ObjectPlacer : MonoBehaviour
         {
             if(SelectedObject == ObjectsToPlace[0] && BrickNum > 0)
             {
+                ASource.PlayOneShot(BrickPlace);
                 Instantiate(SelectedObject, Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0, 0, 1)), Quaternion.identity);
                 BrickNum--;
             }
 
             if (SelectedObject == ObjectsToPlace[1] && MetalNum > 0)
             {
+                ASource.PlayOneShot(MetalPlace);
                 Instantiate(SelectedObject, Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0, 0, 1)), Quaternion.identity);
                 MetalNum--;
             }
 
             if (SelectedObject == ObjectsToPlace[2] && SpringNum > 0)
             {
+                ASource.PlayOneShot(SpringPlace);
                 Instantiate(SelectedObject, Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0, 0, 1)), Quaternion.identity);
                 SpringNum--;
             }
@@ -63,16 +73,19 @@ public class ObjectPlacer : MonoBehaviour
             
             if (hit.collider.name.Contains("Brick"))
             {
+                ASource.PlayOneShot(EraserSound);
                 Destroy(hit.collider.gameObject);
                 BrickNum++;
             }
             else if(hit.collider.name.Contains("Metal"))
             {
+                ASource.PlayOneShot(EraserSound);
                 Destroy(hit.collider.gameObject);
                 MetalNum++;
             }
             else if (hit.collider.name.Contains("Spring"))
             {
+                ASource.PlayOneShot(EraserSound);
                 Destroy(hit.collider.gameObject);
                 SpringNum++;
             }

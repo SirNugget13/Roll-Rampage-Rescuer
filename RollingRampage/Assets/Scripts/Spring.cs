@@ -6,6 +6,7 @@ using UnityEngine;
 public class Spring : MonoBehaviour
 {
     public float BounceMultiply;
+    public AudioSource Sproing;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class Spring : MonoBehaviour
         
         if(collision.gameObject.GetComponent<Rigidbody2D>() != null)
         {
+            Sproing.Play();
             float BounceForce = (float)(collision.gameObject.GetComponent<Rigidbody2D>().mass * BounceMultiply);
             collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(collision.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0);
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * BounceForce, ForceMode2D.Impulse);

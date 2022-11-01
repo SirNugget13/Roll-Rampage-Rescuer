@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 0}
+  GameAudio: {fileID: 24100000, guid: 693faa4d10deb9b4a89b1c153cbcab32, type: 2}
   Woosh: {fileID: 132257375880648565}
   ReWoosh: {fileID: 8497039141008832948}
 --- !u!82 &132257375880648565
@@ -58,7 +59,7 @@ AudioSource:
   m_GameObject: {fileID: 3432781917729361430}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7842256799036235944, guid: 693faa4d10deb9b4a89b1c153cbcab32, type: 2}
   m_audioClip: {fileID: 8300000, guid: ce1c7f3ed55741643ae31f5a718b1d12, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -154,7 +155,7 @@ AudioSource:
   m_GameObject: {fileID: 3432781917729361430}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7842256799036235944, guid: 693faa4d10deb9b4a89b1c153cbcab32, type: 2}
   m_audioClip: {fileID: 8300000, guid: cc371477270aacb4380c953db2eaac64, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

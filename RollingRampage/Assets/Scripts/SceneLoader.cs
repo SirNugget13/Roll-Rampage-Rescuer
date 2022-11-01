@@ -1,19 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField] RectTransform fader;
 
+    public AudioMixer GameAudio;
     public AudioSource Woosh;
     public AudioSource ReWoosh;
-    public MusicManager MManager;
 
     private void Start()
     {
         fader.gameObject.SetActive(true);
+
+        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "MusicVolume", 0.01f, 0));
+        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "MusicVolume", 1.5f, 0.8f));
+
+        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "Effects", 0.01f, 0));
+        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "Effects", 1.5f, 0.8f));
+
         this.Wait(0.3f, () =>
         {
             ReWoosh.PlayDelayed(0);
@@ -27,11 +35,14 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadScenes(int index)
     {
+        Debug.Log("LoadCalled");
+
         fader.gameObject.SetActive(true);
 
         LeanTween.scale(fader, new Vector3(0, 0, 0), 0);
 
-        MManager.FadeOut = true;
+        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "MusicVolume", 1.5f, 0));
+        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "Effects", 1.5f, 0));
 
         Woosh.PlayDelayed(0.75f);
         this.Wait(1, () => 
@@ -48,11 +59,14 @@ public class SceneLoader : MonoBehaviour
 
     public void NextLevel()
     {
+        Debug.Log("NextCalled");
+
         fader.gameObject.SetActive(true);
 
         LeanTween.scale(fader, new Vector3(0, 0, 0), 0);
-        
-        MManager.FadeOut = true;
+
+        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "MusicVolume", 1.5f, 0));
+        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "Effects", 1.5f, 0));
 
         Woosh.PlayDelayed(0.75f);
         this.Wait(1, () =>
@@ -69,11 +83,14 @@ public class SceneLoader : MonoBehaviour
 
     public void ReloadScene()
     {
+        Debug.Log("ReloadCalled");
+        
         fader.gameObject.SetActive(true);
 
         LeanTween.scale(fader, new Vector3(0, 0, 0), 0);
 
-        MManager.FadeOut = true;
+        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "MusicVolume", 1.5f, 0));
+        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "Effects", 1.5f, 0));
 
         Woosh.PlayDelayed(0.75f);
         this.Wait(1, () =>

@@ -62,10 +62,10 @@ public class Man : MonoBehaviour
         
     public void PlayDeathSounds()
     {
-        Debug.Log("Gabba");
+        //Debug.Log("Gabba");
         if(!IsDead)
         {
-            Debug.Log("Goo");
+            //Debug.Log("Goo");
             ASource.PlayOneShot(DeathSound);
             ASource.PlayOneShot(ExplodeSound);
         }

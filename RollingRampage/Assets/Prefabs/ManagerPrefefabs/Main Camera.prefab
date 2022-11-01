@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FluffingADuck: {fileID: -3766795553703775288}
   FluffingAGoose: {fileID: -6102207711593088079}
+  FadeOut: 0
 --- !u!82 &-3766795553703775288
 AudioSource:
   m_ObjectHideFlags: 0
@@ -133,7 +134,7 @@ AudioSource:
   m_GameObject: {fileID: 611068725236659977}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -856674512408786802, guid: 693faa4d10deb9b4a89b1c153cbcab32, type: 2}
   m_audioClip: {fileID: 8300000, guid: b8fe515fecb51c040aaba896fcff5a32, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -229,7 +230,7 @@ AudioSource:
   m_GameObject: {fileID: 611068725236659977}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -856674512408786802, guid: 693faa4d10deb9b4a89b1c153cbcab32, type: 2}
   m_audioClip: {fileID: 8300000, guid: 99f51b724d8854244b9b57f15a34bfe7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

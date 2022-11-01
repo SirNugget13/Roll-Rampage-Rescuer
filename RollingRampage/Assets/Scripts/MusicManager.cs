@@ -7,10 +7,8 @@ public class MusicManager : MonoBehaviour
 {
     public AudioSource FluffingADuck;
     public AudioSource FluffingAGoose;
-    public bool FadeOut = false;
 
     private int rand;
-    private bool duck = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,17 +16,15 @@ public class MusicManager : MonoBehaviour
         rand = Random.Range(1, 21);
         if(rand == 1)
         {
-            FluffingAGoose.Play();
-            FluffingAGoose.volume = 0;
-     
+            FluffingAGoose.Play();     
         }
         else
         {
             FluffingADuck.Play();
-            FluffingADuck.volume = 0;
-            duck = true;
         }
     }
+
+    /*
 
     // Update is called once per frame
     void Update()
@@ -56,4 +52,5 @@ public class MusicManager : MonoBehaviour
             }
         }
     }
+    */
 }

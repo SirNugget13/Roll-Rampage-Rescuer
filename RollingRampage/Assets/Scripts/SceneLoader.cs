@@ -37,6 +37,8 @@ public class SceneLoader : MonoBehaviour
     {
         Debug.Log("LoadCalled");
 
+        Time.timeScale = 1;
+
         fader.gameObject.SetActive(true);
 
         LeanTween.scale(fader, new Vector3(0, 0, 0), 0);
@@ -84,7 +86,9 @@ public class SceneLoader : MonoBehaviour
     public void ReloadScene()
     {
         Debug.Log("ReloadCalled");
-        
+
+        Time.timeScale = 1;
+
         fader.gameObject.SetActive(true);
 
         LeanTween.scale(fader, new Vector3(0, 0, 0), 0);

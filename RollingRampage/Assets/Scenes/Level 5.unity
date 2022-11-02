@@ -1061,6 +1061,7 @@ MonoBehaviour:
   CamPos: {fileID: 1962811292}
   FinalCamPos: {fileID: 484534951}
   FinalCamSize: 30
+  PauseUI: {fileID: 1444527326}
   SpringNumText: {fileID: 1533505892}
   BrickNumText: {fileID: 1911134069}
   MetalNumText: {fileID: 2005367489}
@@ -2187,7 +2188,7 @@ Transform:
   - {fileID: 1630756044}
   - {fileID: 2031245426}
   m_Father: {fileID: 1579386344}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!225 &721118452
 CanvasGroup:
@@ -3773,6 +3774,101 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434402771}
   m_CullTransparentMesh: 1
+--- !u!1001 &1444527324
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1579386344}
+    m_Modifications:
+    - target: {fileID: 2483933414030536913, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 844441109}
+    - target: {fileID: 2483933414030536913, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415511686663, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 389367291}
+    - target: {fileID: 2483933415511686663, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415511686663, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Level5GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049012, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_Name
+      value: Pause Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415782225975, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 844441109}
+    - target: {fileID: 2483933415782225975, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScenes
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+--- !u!4 &1444527325 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+  m_PrefabInstance: {fileID: 1444527324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1444527326 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2483933415778049012, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+  m_PrefabInstance: {fileID: 1444527324}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1486073819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4152,8 +4248,9 @@ RectTransform:
   - {fileID: 9801739}
   - {fileID: 1781133006}
   - {fileID: 725024161}
-  - {fileID: 721118451}
+  - {fileID: 1444527325}
   - {fileID: 754775221}
+  - {fileID: 721118451}
   - {fileID: 1628437543}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -4255,7 +4352,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1579386344}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6329,6 +6426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BreakingSpeed: 4
   TotalVelo: 0
+  Rolling: {fileID: 0}
   BrickSubtraction: 0.05
   MetalSubtraction: 0.15
 --- !u!1 &331734391099721430

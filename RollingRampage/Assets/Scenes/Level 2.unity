@@ -157,8 +157,9 @@ RectTransform:
   - {fileID: 1519364568}
   - {fileID: 372472359}
   - {fileID: 1421292742}
-  - {fileID: 608405289}
+  - {fileID: 724639708}
   - {fileID: 1254906042}
+  - {fileID: 608405289}
   - {fileID: 306136800}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1098,7 +1099,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 150678857}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1754,6 +1755,91 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520379662}
   m_CullTransparentMesh: 1
+--- !u!1001 &560300753
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 150678857}
+    m_Modifications:
+    - target: {fileID: 2483933414030536913, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 183517714}
+    - target: {fileID: 2483933414030536913, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933414030536915, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_Name
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415511686663, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1407460003}
+    - target: {fileID: 2483933415511686663, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049012, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_Name
+      value: Pause Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483933415782225975, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 183517714}
+    - target: {fileID: 2483933415782225975, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScenes
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
 --- !u!1 &608405288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1790,7 +1876,7 @@ Transform:
   - {fileID: 1967829931}
   - {fileID: 332471948}
   m_Father: {fileID: 150678857}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!225 &608405290
 CanvasGroup:
@@ -2182,6 +2268,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723662794}
   m_CullTransparentMesh: 1
+--- !u!1 &724639707 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2483933415778049012, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+  m_PrefabInstance: {fileID: 560300753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &724639708 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2483933415778049013, guid: 8081e12d2d1d54041b50860c677bcb47, type: 3}
+  m_PrefabInstance: {fileID: 560300753}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &728379753
 GameObject:
   m_ObjectHideFlags: 0
@@ -3931,6 +4027,10 @@ PrefabInstance:
       propertyPath: Hotbar
       value: 
       objectReference: {fileID: 1519364567}
+    - target: {fileID: 727080202394251007, guid: c2454971b9ddd4244addc9b05482e544, type: 3}
+      propertyPath: PauseUI
+      value: 
+      objectReference: {fileID: 724639707}
     - target: {fileID: 727080202394251007, guid: c2454971b9ddd4244addc9b05482e544, type: 3}
       propertyPath: TimerText
       value: 

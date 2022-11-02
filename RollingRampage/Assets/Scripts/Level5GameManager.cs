@@ -25,6 +25,9 @@ public class Level5GameManager : MonoBehaviour
     public float FinalCamSize;
 
     //UI Element Variables
+    public GameObject PauseUI;
+    private bool IsPaused = false;
+
     public GameObject SpringNumText;
     public GameObject BrickNumText;
     public GameObject MetalNumText;
@@ -74,6 +77,22 @@ public class Level5GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (IsPaused)
+            {
+                Time.timeScale = 1;
+                PauseUI.SetActive(false);
+                IsPaused = false;
+            }
+            else
+            {
+                Time.timeScale = 0;
+                PauseUI.SetActive(true);
+                IsPaused = true;
+            }
+        }
+
         if (start)
         {
             if (!BoulderIsSpawned)
@@ -254,6 +273,14 @@ public class Level5GameManager : MonoBehaviour
             HighlightBoxes[2].SetActive(false);
             HighlightBoxes[3].SetActive(false);
         }
+    }
+
+    public void ResumeButton()
+    {
+        Debug.Log("Resume");
+        Time.timeScale = 1;
+        PauseUI.SetActive(false);
+        IsPaused = false;
     }
 
     void UpdateObjectNumbers()

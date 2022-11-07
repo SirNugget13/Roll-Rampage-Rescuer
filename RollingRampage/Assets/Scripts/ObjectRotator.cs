@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjectRotator : MonoBehaviour
 {
     public GameObject selectedObject;
-    public float RotationMultiplier = 5;
+    public float RotationMultiplier = 6;
     Vector3 offset;
     public bool RotateObject = false;
 

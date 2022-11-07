@@ -19,8 +19,8 @@ public class SceneLoader : MonoBehaviour
         StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "MusicVolume", 0.01f, 0));
         StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "MusicVolume", 1.5f, 0.8f));
 
-        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "Effects", 0.01f, 0));
-        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "Effects", 1.5f, 0.8f));
+        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "EffectsVolume", 0.01f, 0));
+        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "EffectsVolume", 1.5f, 0.8f));
 
         this.Wait(0.3f, () =>
         {
@@ -44,7 +44,7 @@ public class SceneLoader : MonoBehaviour
         LeanTween.scale(fader, new Vector3(0, 0, 0), 0);
 
         StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "MusicVolume", 1.5f, 0));
-        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "Effects", 1.5f, 0));
+        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "EffectsVolume", 1.5f, 0));
 
         Woosh.PlayDelayed(0.75f);
         this.Wait(1, () => 
@@ -68,7 +68,7 @@ public class SceneLoader : MonoBehaviour
         LeanTween.scale(fader, new Vector3(0, 0, 0), 0);
 
         StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "MusicVolume", 1.5f, 0));
-        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "Effects", 1.5f, 0));
+        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "EffectsVolume", 1.5f, 0));
 
         Woosh.PlayDelayed(0.75f);
         this.Wait(1, () =>
@@ -94,7 +94,7 @@ public class SceneLoader : MonoBehaviour
         LeanTween.scale(fader, new Vector3(0, 0, 0), 0);
 
         StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "MusicVolume", 1.5f, 0));
-        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "Effects", 1.5f, 0));
+        StartCoroutine(FadeMixerGroup.StartFade(GameAudio, "EffectsVolume", 1.5f, 0));
 
         Woosh.PlayDelayed(0.75f);
         this.Wait(1, () =>

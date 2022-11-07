@@ -15,6 +15,7 @@ public class CameraPosition : MonoBehaviour
     public float CamFinalSize;
     public float CamSizeTime;
     public float BoulderCamSize = 12;
+    public float SmoothWait = 1.7f;
 
     private Camera cam;
     private bool followFollowBoulder;
@@ -35,18 +36,22 @@ public class CameraPosition : MonoBehaviour
             placeholder = Boulder.transform.position;
             placeholder.z = -10;
 
-            cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, BoulderCamSize, CamSizeTime * Time.deltaTime);
-            gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, placeholder, MoveToBoulderSpeed * Time.deltaTime);
+            if(!followFollowBoulder)
+            {
+                cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, BoulderCamSize, CamSizeTime * Time.deltaTime);
+                gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, placeholder, MoveToBoulderSpeed * Time.deltaTime);
+            }
 
-            this.Wait(1.7f, () =>
+            if (followFollowBoulder)
+            {
+                gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, placeholder, 10 * Time.deltaTime);
+                gameObject.transform.position = placeholder;
+            }
+
+            this.Wait(SmoothWait, () =>
             {
                 followFollowBoulder = true;
             });
-
-            if(followFollowBoulder)
-            {
-                gameObject.transform.position = placeholder;
-            }
 
             if (Boulder.gameObject.transform.position.x > TransitionPos && !Level5)
             {

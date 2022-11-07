@@ -8,6 +8,12 @@ public class TrampolineSound : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        ASource.PlayOneShot(ASource.clip);
+        if(collision.gameObject.GetComponent<Rigidbody2D>() != null)
+        {
+            if(collision.gameObject.GetComponent<Rigidbody2D>().velocity.x >= 5 || collision.gameObject.GetComponent<Rigidbody2D>().velocity.y >= 5)
+            {
+                ASource.PlayOneShot(ASource.clip);
+            }
+        }
     }
 }

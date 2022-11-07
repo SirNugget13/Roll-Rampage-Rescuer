@@ -2720,7 +2720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5942976348713091400, guid: a746c5bee730b69408c55a36476a226b, type: 3}
       propertyPath: MetalNum
-      value: 15
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5942976348713091400, guid: a746c5bee730b69408c55a36476a226b, type: 3}
       propertyPath: SpringNum
@@ -5640,6 +5640,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 611068725236659981, guid: 90b701bd96929824692a945c41058253, type: 3}
+      propertyPath: SmoothWait
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 611068725236659981, guid: 90b701bd96929824692a945c41058253, type: 3}
       propertyPath: CamFinalSize
       value: 30
       objectReference: {fileID: 0}
@@ -5653,7 +5657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 611068725236659981, guid: 90b701bd96929824692a945c41058253, type: 3}
       propertyPath: MoveToBoulderSpeed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 611068725236659981, guid: 90b701bd96929824692a945c41058253, type: 3}
       propertyPath: MoveFromBoulderSpeed
@@ -6339,7 +6343,7 @@ Rigidbody2D:
   m_Mass: 1500
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1.3
+  m_GravityScale: 1.4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -6424,9 +6428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 106cf0d6c4f165b4187e3a7695b56889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BreakingSpeed: 4
+  BreakingSpeed: 3
   TotalVelo: 0
-  Rolling: {fileID: 0}
   BrickSubtraction: 0.05
   MetalSubtraction: 0.15
 --- !u!1 &331734391099721430

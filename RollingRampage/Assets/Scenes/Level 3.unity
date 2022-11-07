@@ -3482,6 +3482,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 611068725236659981, guid: 90b701bd96929824692a945c41058253, type: 3}
+      propertyPath: SmoothWait
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 611068725236659981, guid: 90b701bd96929824692a945c41058253, type: 3}
       propertyPath: CamFinalSize
       value: 30
       objectReference: {fileID: 0}
@@ -3495,7 +3499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 611068725236659981, guid: 90b701bd96929824692a945c41058253, type: 3}
       propertyPath: MoveToBoulderSpeed
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 611068725236659981, guid: 90b701bd96929824692a945c41058253, type: 3}
       propertyPath: MoveFromBoulderSpeed
